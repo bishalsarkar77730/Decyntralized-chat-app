@@ -8,7 +8,33 @@ import { Model, Error } from "../index";
 import images from "../../assets";
 
 const NavBar = () => {
-  return <div>navbar</div>;
+  const menuItems = [
+    {
+      menu: "All Users",
+      link: "alluser",
+    },
+    {
+      menu: "All Users",
+      link: "/",
+    },
+    {
+      menu: "All Users",
+      link: "/",
+    },
+    {
+      menu: "All Users",
+      link: "/",
+    },
+    {
+      menu: "All Users",
+      link: "/",
+    },
+  ];
+  return (
+    <div className={Style.NavBar}>
+      <div className={Style.NavBar_Box}></div>
+    </div>
+  )
 };
 
 export default NavBar;
