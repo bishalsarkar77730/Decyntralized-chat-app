@@ -1,13 +1,16 @@
 import { ethers } from "ethers";
 import Web3Modal from "web3modal";
+
 import { ChatAppAddress, ChatAppABI } from "../Context/constants";
 
-export const CheckIfWalletConnected = async () => {
+export const ChechIfWalletConnected = async () => {
   try {
-    if (!window.ethereum) return console.log("Install metamask");
+    if (!window.ethereum) return console.log("Install MateMask");
+
     const accounts = await window.ethereum.request({
       method: "eth_accounts",
     });
+
     const firstAccount = accounts[0];
     return firstAccount;
   } catch (error) {
@@ -17,7 +20,14 @@ export const CheckIfWalletConnected = async () => {
 
 export const connectWallet = async () => {
   try {
-    if (!window.ethereum) return console.log("Install metamask");
+    // if (!window.ethereum) return console.log("Install MateMask");
+
+    // const accounts = await window.ethereum.request({
+    //   method: "eth_requestAccounts",
+    // });
+
+    if (!window.ethereum) return console.log("Install MetaMask");
+
     const accounts = await window.ethereum.request({
       method: "eth_requestAccounts",
     });
@@ -29,7 +39,7 @@ export const connectWallet = async () => {
 };
 
 const fetchContract = (signerOrProvider) =>
-  new ethers.Contract(ChatAppABI, ChatAppAddress, signerOrProvider);
+  new ethers.Contract(ChatAppAddress, ChatAppABI, signerOrProvider);
 
 export const connectingWithContract = async () => {
   try {
@@ -44,8 +54,9 @@ export const connectingWithContract = async () => {
   }
 };
 
-export const convertTime = (time) => {
+export const converTime = (time) => {
   const newTime = new Date(time.toNumber());
+
   const realTime =
     newTime.getHours() +
     "/" +

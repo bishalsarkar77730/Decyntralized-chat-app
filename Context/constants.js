@@ -1,4 +1,6 @@
-// 0x5FbDB2315678afecb367f032d93F642f64180aa3
-import chatAppJson from './ChatApp.json'
+//0x5FbDB2315678afecb367f032d93F642f64180aa3
+import chatApp from "./ChatApp.json";
+
 export const ChatAppAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
-export const ChatAppABI = chatAppJson.abi;
+
+export const ChatAppABI = chatApp.abi;

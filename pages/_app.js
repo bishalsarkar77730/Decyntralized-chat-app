@@ -1,5 +1,6 @@
 import "../styles/globals.css";
-// Internal Import
+
+//INTERNAL IMPORT
 import { ChatAppProvider } from "../Context/ChatAppContext";
 import { NavBar } from "../Components/index";
 
